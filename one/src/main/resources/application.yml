@@ -1,0 +1,19 @@
+# web
+spring:
+  application:
+    name: one
+  datasource:
+    username: root
+    password: 123456
+    #?serverTimezone=UTC解决时区的报错
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 8080
+mybatis:
+  # 注意：对应实体类的路径
+  type-aliases-package: com.example.one.pojo
+  #指定myBatis的核心配置文件与Mapper映射文件
+  mapper-locations: classpath:com/example/one/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
